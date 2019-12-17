@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "{{  .Chart.Name }}-deployment"
@@ -18,12 +18,12 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
 {{ if .Values.istio.enabled }}
-{{ else }}
+{{/*{{ else }}
         readinessProbe:
           httpGet:
             path: /health
             port: 9080
-          initialDelaySeconds: 20
+          initialDelaySeconds: 20*/}}
 {{ end }}
         resources:
           requests:
@@ -34,3 +34,25 @@ spec:
             value: "{{ .Values.service.servicePort }}"
           - name: APPLICATION_NAME
             value: "{{ .Release.Name }}"
+          - name: IBM_EVENT_STREAM_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: ibm-event-stream-secret
+                key: username
+          - name: IBM_EVENT_STREAM_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: ibm-event-stream-secret
+                key: password
+        volumeMounts:
+          - name: application-conf
+            mountPath: /conf
+          - name: logback-conf
+            mountPath: /logback
+      volumes:
+        - name: application-conf
+          configMap:
+            name: application-configmap
+        - name: logback-conf
+          configMap:
+            name: logback-configmap

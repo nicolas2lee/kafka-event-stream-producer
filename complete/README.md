@@ -1,4 +1,4 @@
-## streamingibmcloudworkshop
+## kafkaeventstreamproducer
 
 Basic Web project with Java
 

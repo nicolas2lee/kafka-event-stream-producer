@@ -2,10 +2,10 @@
 version : 0.0.3
 
 # The container name used for the run container
-container-name-run : "streamingibmcloudworkshop"
+container-name-run : "kafkaeventstreamproducer"
 
 # The container name used for the tools container
-container-name-tools : "bx-dev-streamingibmcloudworkshop-tools"
+container-name-tools : "bx-dev-kafkaeventstreamproducer-tools"
 
 # The project root in the run container to mount to host-path-run
 container-path-run : "/project"
@@ -18,7 +18,7 @@ dockerfile-run : "Dockerfile"
 dockerfile-tools : "Dockerfile-tools"
 
 # The name of image to create from dockerfile-run
-image-name-run : "streamingibmcloudworkshop"
+image-name-run : "kafkaeventstreamproducer"
 # The name of image to create from dockerfile-tools
 image-name-tools : "bx-dev-java-maven-tools"
 
@@ -44,7 +44,13 @@ container-port-map : "9080:9080,9443:9443"
 container-port-map-debug : "7777:7777"
 
 # The relative path to the helm chart used for Kubernetes deployment
-chart-path : "chart/streamingibmcloudworkshop"
-ibm-generated-id : "2979d86b-2b62-4033-89b5-e7e224d472f2"
-ibm-cloud-app-id : "c6374304-4b99-48a7-9049-76a62fa16ed5"
+chart-path : "chart/kafkaeventstreamproducer"
+ibm-generated-id : "1cef7127-4fa7-438c-bd45-ffa7b347a51c"
+ibm-cloud-app-id : "715f916c-21ac-40c9-b001-657b1c260f0c"
 credentials-filepath : "src/main/liberty/config/server.env, src/main/resources/localdev-config.json"
+
+deploy-target: "container"
+
+deploy-image-target: "us.icr.io/streaming/kafkaeventstreamproducer"
+
+ibm-cluster: "streaming"
