@@ -41,7 +41,7 @@ data:
             }
 
             myTopic = "sourceTopic"
-            sasl.jaas.config = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"token\" password=\"${password}\";",
+            sasl.jaas.config = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"token\" password=\"-k0nCdSGmCSuU_j4I07Bz6s2bazqzO6rLK_o3Apwwlyo\";",
             sasl.mechanism = "PLAIN"
             security.protocol = "SASL_SSL"
             ssl.protocol = "TLSv1.2"
