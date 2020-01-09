@@ -38,6 +38,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.iheart</groupId>
+            <artifactId>ficus_2.12</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -138,6 +143,14 @@
                 <artifactId>avro</artifactId>
                 <version>${avro.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.iheart/ficus -->
+            <dependency>
+                <groupId>com.iheart</groupId>
+                <artifactId>ficus_2.12</artifactId>
+                <version>1.4.7</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
