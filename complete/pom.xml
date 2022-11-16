@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <jackson.version>2.9.10</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
     </properties>
 
     <dependencies>
